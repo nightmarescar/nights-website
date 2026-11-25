@@ -84,9 +84,6 @@ const content = {
 };
 
 
-// ========================================
-// PROFILE POPUP AND NAVIGATION
-// ========================================
 
 const navButtons = document.querySelectorAll(".nav-card");
 const popupTitle = document.getElementById("popup-title");
@@ -119,10 +116,6 @@ okButton.addEventListener("click", () => {
     popup.classList.add("closed");
 });
 
-
-// ========================================
-// DRAWING SYSTEM
-// ========================================
 
 const canvas = document.getElementById("drawing-canvas");
 const ctx = canvas.getContext("2d");
@@ -270,9 +263,7 @@ clearButton.addEventListener("click", () => {
 });
 
 
-// ========================================
-// DISCORD DRAWING SUBMISSION
-// ========================================
+// discord thingy pls work asdijodhjas//
 
 const submitButton = document.getElementById("submit-drawing");
 
