@@ -131,7 +131,7 @@ let currentSize = 4;
 let isErasing = false;
 
 
-// Resize canvas while preserving existing drawing
+// Resize canvas while preserving existing drawing bc if this doesnt freaking work im gonna crash out
 
 function resizeCanvas() {
     const rect = canvas.getBoundingClientRect();
