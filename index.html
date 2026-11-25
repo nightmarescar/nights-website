@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Night - Website</title>
+
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <div class="browser-window">
+
+        <header class="title-bar">
+            <div class="title-text">
+                <span>Internet Explorer - Night</span>
+            </div>
+
+            <button class="close-button" aria-label="Close">X</button>
+        </header>
+
+        <nav class="navigation">
+            <button class="nav-card" data-section="about">About me</button>
+            <button class="nav-card" data-section="interests">Interests</button>
+            <button class="nav-card" data-section="dni">DNI</button>
+            <button class="nav-card" data-section="notes">Notes</button>
+            <button class="nav-card" data-section="friends">Friends</button>
+        </nav>
+
+        <main class="browser-content">
+
+            <section id="about" class="page"></section>
+            <section id="interests" class="page hidden"></section>
+            <section id="dni" class="page hidden"></section>
+            <section id="notes" class="page hidden"></section>
+            <section id="friends" class="page hidden"></section>
+
+            <div class="drawing-tools">
+                <label>Colour:</label>
+                <input type="color" id="draw-color" value="#000000">
+
+                <label>Size:</label>
+                <input type="range" id="brush-size" min="1" max="30" value="4">
+
+                <button id="eraser">Eraser</button>
+                <button id="clear-canvas">Clear</button>
+                <button id="submit-drawing">Submit to Discord!</button>
+            </div>
+
+            <canvas id="drawing-canvas"></canvas>
+
+        </main>
+
+        <footer class="status-bar">
+            <span>Done</span>
+        </footer>
+
+    </div>
+
+    <div class="profile-popup">
+
+        <div class="popup-title-bar">
+            <span id="popup-title">Night - About me</span>
+            <button class="close-button" aria-label="Close">X</button>
+        </div>
+
+        <div class="popup-content">
+            <div class="profile-icon">
+                <span>?</span>
+            </div>
+
+            <div class="profile-info">
+                <div id="popup-content"></div>
+            </div>
+        </div>
+
+        <div class="popup-buttons">
+            <button type="button" id="popup-ok">OK</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
