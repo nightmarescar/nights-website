@@ -1,0 +1,349 @@
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 11px;
+    color: #000;
+    background: #000;
+    overflow: hidden;
+}
+
+/* Browser window */
+
+.browser-window {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 30px);
+    margin: 15px;
+    background: #ece9d8;
+    border: 1px solid #fff;
+    box-shadow: 1px 1px 4px #555;
+}
+
+.title-bar,
+.popup-title-bar {
+    height: 26px;
+    min-height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3px 0 8px;
+    color: #fff;
+    font-weight: bold;
+    background: linear-gradient(180deg, #0a6adf 0%, #0058e6 14%, #0054e3 100%);
+}
+
+.title-text {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.close-button {
+    width: 21px;
+    height: 21px;
+    padding: 0;
+    color: #fff;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    background: linear-gradient(180deg, #f28b79, #d52b16);
+    border: 1px solid #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Navigation */
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 8px;
+    background: #ece9d8;
+    border-bottom: 1px solid #aca899;
+}
+
+button {
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 11px;
+}
+
+.navigation button,
+.popup-buttons button {
+    height: 25px;
+    padding: 0 10px;
+    color: #000;
+    background: linear-gradient(180deg, #fff, #e5e3da);
+    border: 1px solid #aaa69a;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.navigation button:hover,
+.popup-buttons button:hover {
+    background: linear-gradient(180deg, #fff, #d9e8fb);
+    border-color: #316ac5;
+}
+
+.navigation button:active,
+.popup-buttons button:active {
+    background: #d6d3c8;
+    border-color: #777;
+}
+
+/* Page content and drawing area */
+
+.browser-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #888;
+    border-top: 1px solid #fff;
+    box-shadow: inset 1px 1px 2px #aaa;
+}
+
+.page {
+    display: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+h2 {
+    margin: 12px 0;
+    padding-bottom: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+/* Status bar */
+
+.status-bar {
+    height: 20px;
+    min-height: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 6px;
+    background: #ece9d8;
+    border-top: 1px solid #fff;
+    box-shadow: inset 0 1px 1px #aca899;
+}
+
+/* Profile popup */
+
+.profile-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 430px;
+    max-width: calc(100vw - 40px);
+    background: #ece9d8;
+    border: 1px solid #fff;
+    box-shadow: 2px 2px 8px #000;
+}
+
+.popup-title-bar {
+    padding-right: 3px;
+}
+
+.popup-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    max-height: 65vh;
+    overflow-y: auto;
+}
+
+.profile-icon {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #fff, #dceaff);
+    border: 1px solid #7f9db9;
+    font-size: 28px;
+    font-weight: bold;
+    color: #0754a6;
+    box-shadow: inset 1px 1px 2px #aaa;
+}
+
+.profile-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.Title {
+    margin: 0 0 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+}
+
+.profile-info h1.Title {
+    padding-bottom: 7px;
+    border-bottom: 1px solid #aaa;
+}
+
+.profile-info h2 {
+    margin: 16px 0 8px;
+    padding: 4px 6px;
+    color: #fff;
+    font-size: 12px;
+    background: linear-gradient(180deg, #4b91e5, #1858a8);
+    border: 1px solid #174b91;
+}
+
+.profile-info p {
+    margin: 7px 0;
+    line-height: 1.4;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 12px 12px;
+}
+
+.popup-buttons button {
+    min-width: 65px;
+}
+
+.profile-popup.closed {
+    display: none;
+}
+
+/* Information panels */
+
+.profile-info .info-panel {
+    padding: 8px;
+    margin: 8px 0;
+    background: #fff;
+    border: 1px solid #aaa;
+    box-shadow: inset 1px 1px 2px #ddd;
+}
+
+/* Identity tags */
+
+.profile-info .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.profile-info .tag {
+    display: inline-block;
+    padding: 4px 7px;
+    color: #003b75;
+    background: #dceaff;
+    border: 1px solid #8baed5;
+    box-shadow: 1px 1px 0 #fff;
+}
+
+/* Friends grid */
+
+.profile-info .friends-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+}
+
+.profile-info .friend {
+    padding: 8px 5px;
+    text-align: center;
+    background: linear-gradient(180deg, #fff, #e5e3da);
+    border: 1px solid #aaa69a;
+    box-shadow: 1px 1px 0 #fff;
+}
+
+.profile-info .friend::before {
+    content: "👤";
+    display: block;
+    margin-bottom: 4px;
+    font-size: 18px;
+}
+
+/* Interests */
+
+.profile-info .interest-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.profile-info .interest {
+    padding: 5px 7px;
+    background: #fff;
+    border: 1px solid #b5b5b5;
+    border-bottom: 2px solid #8baed5;
+}
+
+/* DNI list */
+
+.profile-info .dni-list p {
+    padding: 6px 8px;
+    margin: 5px 0;
+    background: #fff;
+    border-left: 3px solid #d45b4c;
+}
+
+/* Drawing tools */
+
+.drawing-tools {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px;
+    flex-shrink: 0;
+    background: #ece9d8;
+    border-bottom: 1px solid #aca899;
+}
+
+.drawing-tools button {
+    padding: 4px 9px;
+    background: linear-gradient(#fff, #e5e3da);
+    border: 1px solid #aaa69a;
+    cursor: pointer;
+}
+
+.drawing-tools button:hover {
+    border-color: #316ac5;
+}
+
+.drawing-tools input[type="color"] {
+    width: 28px;
+    height: 23px;
+    padding: 1px;
+}
+
+/* Drawing canvas */
+
+#drawing-canvas {
+    display: block;
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    background: #fff;
+    cursor: crosshair;
+    touch-action: none;
+}
